@@ -1,0 +1,26 @@
+<div class="cart-content">
+  <h2>Twój koszyk:</h2>
+  <div class="cart-item row" *ngFor="let item of cartItems">
+    <div class="cart-item-data">
+      <div class="cart-item-picture">
+        <img src="{{item.pictureURL}}" alt="{{item.description}}" height="100">
+      </div>
+      <div class="cart-item-description">
+        <h3>{{item.name}}</h3>
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+    <div class="cart-item-price-details">
+      <div class="cart-item-quantity">
+        {{item.quantity}}
+      </div>
+      <div class="cart-item-price">
+        {{item.price * item.quantity | currency:'PLN':'symbol':'1.2':'pl'}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6"></div>
+    <div class="col-6 cart-summary"></div>
+  </div>
+</div>

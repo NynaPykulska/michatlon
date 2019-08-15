@@ -1,0 +1,9 @@
+<div class="product-card" *ngIf="product">
+  <div class="price-label">{{product.price | currency:'PLN':'symbol':'1.2':'pl'}}</div>
+  <div class="product-picture">
+    <img src="{{product.pictureURL}}" alt="{{product.description}}" height="100">
+  </div>
+  <div class="product-name">{{product.name}}</div>
+  <div class="product-description">{{product.description}}</div>
+  <button class="btn btn-primary cart-button" (click)="addToCartClicked()">Do koszyka</button>
+</div>

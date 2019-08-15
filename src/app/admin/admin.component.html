@@ -1,0 +1,120 @@
+<div class="admin-panel row">
+  <div class="col-12">
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="admin-accordion">
+      <ngb-panel title="Nowa kategoria">
+        <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="input-group col-10">
+            <input type="text" class="form-control" placeholder="Nazwa" [(ngModel)]="newCategory.name">
+          </div>
+          <div class="col-2 button-container">
+            <button class="btn-primary" (click)="saveNewCategory()">Dodaj</button>
+          </div>
+        </div>
+
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Edytuj Kategorie">
+        <ng-template ngbPanelContent>
+
+        <div class="row" *ngFor="let category of categories">
+          <div class="input-group col-8">
+            <input type="text" class="form-control" placeholder="Nazwa" [(ngModel)]="category.name">
+          </div>
+          <div class="col-2 button-container">
+            <button class="btn-primary" (click)="updateCategoryName(category)">Zapisz</button>
+          </div>
+          <div class="col-2 button-container">
+            <button class="btn-primary" (click)="deleteCategory(category)">Usuń</button>
+          </div>
+        </div>
+        </ng-template>
+      </ngb-panel>
+
+
+      <ngb-panel title="Nowy produkt">
+        <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group">
+              <input type="text" [(ngModel)]="newProduct.name" class="form-control" placeholder="Nazwa">
+            </div>
+            <div class="input-group">
+              <input type="text" [(ngModel)]="newProduct.description" class="form-control" placeholder="Opis">
+            </div>
+            <div class="input-group">
+              <input type="text" [(ngModel)]="newProduct.pictureURL" class="form-control" placeholder="URL zdjecia">
+            </div>
+            <div class="input-group">
+              <input type="number" [(ngModel)]="newProduct.quantity" class="form-control" placeholder="Ilosc">
+            </div>
+            <div class="input-group">
+              <input type="number" [(ngModel)]="newProduct.price" class="form-control" placeholder="Cena">
+            </div>
+            <ng-select [items]="categories"
+                       bindLabel="name"
+                       bindValue="_id"
+                       placeholder="Kategoria"
+                       [(ngModel)]="newProduct.category_id">
+            </ng-select>
+            <div class="button-container">
+              <button class="btn-primary" (click)="saveNewProduct()">Dodaj</button>
+            </div>
+          </div>
+          <div class="col-6">
+            Podglad
+            <app-product [product]="newProduct"></app-product>
+          </div>
+        </div>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Edytuj produkty">
+        <ng-template ngbPanelContent>
+        <div class="row product-view" *ngFor="let product of products">
+          <div class="col-6">
+            <div class="input-group">
+              <label class="attribute-input-label">Nazwa:</label>
+              <input type="text" [(ngModel)]="product.name" class="form-control" placeholder="Nazwa">
+            </div>
+            <div class="input-group">
+              <label class="attribute-input-label">Opis:</label>
+              <input type="text" [(ngModel)]="product.description" class="form-control" placeholder="Opis">
+            </div>
+
+            <div class="input-group">
+              <label class="attribute-input-label">URL zdjeecia:</label>
+              <input type="text" [(ngModel)]="product.pictureURL" class="form-control" placeholder="URL zdjecia">
+            </div>
+
+            <div class="input-group">
+              <label class="attribute-input-label">Ilośc:</label>
+              <input type="number" [(ngModel)]="product.quantity" class="form-control" placeholder="Ilosc">
+            </div>
+
+            <div class="input-group">
+              <label class="attribute-input-label">Cena:</label>
+              <input type="number" [(ngModel)]="product.price" class="form-control" placeholder="Cena">
+            </div>
+
+            <div class="input-group">
+              <label class="attribute-input-label">Kategoria:</label>
+              <ng-select [items]="categories"
+                         bindLabel="name"
+                         bindValue="_id"
+                         [(ngModel)]="product.category_id">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-6">
+            <app-product [product]="product"></app-product>
+          </div>
+        </div>
+        </ng-template>
+      </ngb-panel>
+
+    </ngb-accordion>
+  </div>
+</div>

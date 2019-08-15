@@ -1,0 +1,15 @@
+.app-content {
+  margin: 0;
+  min-height: calc(100% - 100px);
+  box-shadow: 0 10px 25px -5px #9D8189;
+
+}
+
+.app-col {
+  padding: 0;
+}
+
+.app-container {
+  height: 100%;
+  padding: 0
+}

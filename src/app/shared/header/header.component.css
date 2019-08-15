@@ -1,0 +1,30 @@
+.header {
+  background-color: #D8E2DC;
+  height: 100px;
+  color: #9D8189;
+}
+
+.header-shop-name {
+  font-family: 'Didot';
+  font-size: 24px;
+  padding: 10px;
+}
+
+.header-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-subcategories {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-categories-item {
+  margin: 0 5px;
+  padding: 5px;
+  background-color: #e1ebe5;
+  border-radius: 3px;
+  cursor: pointer;
+}

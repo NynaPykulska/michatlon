@@ -1,0 +1,30 @@
+.categories-menu {
+  background-color: #FFCAD4;
+  color: #9D8189;
+  height: 100%;
+}
+
+.category-name {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.products-container {
+  background-color: #FFE5D9;
+  height: 100%;
+  margin: 0;
+}
+
+.active-category {
+  background-color: #F4ACB7;
+}
+
+.products-content {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+

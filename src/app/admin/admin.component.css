@@ -1,0 +1,37 @@
+.admin-panel {
+  margin: 0;
+  background-color: #FFE5D9;
+  height: 100%;
+}
+
+.input-group {
+  margin-bottom: 3px;
+}
+
+.btn-primary {
+  height: 30px;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.attribute-input-label {
+  width: 100px;
+}
+
+ng-select {
+  width: calc(100% - 100px);
+}
+
+.product-view {
+  padding: 10px 0;
+  border-bottom: 1px solid #9D8189;
+}
+
+.admin-accordion {
+  margin: 0 10px;
+}
