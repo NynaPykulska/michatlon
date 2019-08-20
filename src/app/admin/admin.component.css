@@ -1,6 +1,6 @@
 .admin-panel {
   margin: 0;
-  background-color: #FFE5D9;
+  background-color: #f4f9fc;
   height: 100%;
 }
 
@@ -29,7 +29,6 @@ ng-select {
 
 .product-view {
   padding: 10px 0;
-  border-bottom: 1px solid #9D8189;
 }
 
 .admin-accordion {

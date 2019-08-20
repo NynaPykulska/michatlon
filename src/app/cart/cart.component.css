@@ -1,9 +1,13 @@
 .cart-content {
-
+  padding: 10px
 }
 
 .cart-item {
-
+  margin: 10px 0;
+  color: #6c757d;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 0 15px -5px #C1C8C9;
 }
 
 .cart-item-data {
@@ -15,5 +19,9 @@
 }
 
 .cart-summary {
-  border-top: 1px solid #9D8189;
+  border-top: 1px solid #C1C8C9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
 }

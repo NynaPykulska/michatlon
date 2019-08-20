@@ -3,6 +3,7 @@ import {ApiService} from '../shared/api/api.service';
 import {Product} from '../shared/models/product.model';
 import {Category} from '../shared/models/category.model';
 import {BehaviorSubject} from 'rxjs';
+import {CartService} from '../cart/cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,21 @@ export class ProductsService {
   products: BehaviorSubject<Product[]> = new BehaviorSubject(null);
   productCategories: BehaviorSubject<Category[]> = new BehaviorSubject(null);
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private cartService: CartService) {
     this.requestProducts();
     this.requestProductCategories();
   }
 
   getProductInfo(id: string) {
     return this.products.value.find(elem => elem._id === id);
+  }
+
+  addToCart(id: string) {
+    const productsValue = this.products.value;
+    const selectedProductIndex = productsValue.findIndex(elem => elem._id === id);
+    this.cartService.addToCart(productsValue[selectedProductIndex]);
+    productsValue[selectedProductIndex].quantity --;
+    this.products.next(productsValue);
   }
 
   requestProducts() {

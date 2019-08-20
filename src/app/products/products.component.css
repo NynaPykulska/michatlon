@@ -1,6 +1,7 @@
 .categories-menu {
-  background-color: #FFCAD4;
-  color: #9D8189;
+  background-color: #fff;
+  border-right: 1px solid #eaeef4;
+  color: #6c757d;
   height: 100%;
 }
 
@@ -10,13 +11,14 @@
 }
 
 .products-container {
-  background-color: #FFE5D9;
+  background-color: #f4f9fc;
   height: 100%;
   margin: 0;
 }
 
 .active-category {
-  background-color: #F4ACB7;
+  box-shadow: 0 0 10px -5px #C1C8C9;
+  color: #000;
 }
 
 .products-content {

@@ -6,14 +6,14 @@
 .product-card {
   background-color: #fff;
   margin: 10px;
-  color: #9D8189;
+  color: #6c757d;
   border-radius: 5px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 200px;
-  box-shadow: 0 0 15px -5px #9D8189;
+  box-shadow: 0 0 15px -5px #C1C8C9;
   position: relative;
 }
 
@@ -24,6 +24,7 @@
 }
 
 .product-description {
+  margin: 3px 0;
   font-size: 10px;
   text-align: center;
 }

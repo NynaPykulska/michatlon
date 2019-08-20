@@ -1,7 +1,8 @@
 .header {
-  background-color: #D8E2DC;
+  background-color: #fff;
   height: 100px;
-  color: #9D8189;
+  color: #13293D;
+  border-bottom: 1px solid #eaeef4;
 }
 
 .header-shop-name {
@@ -23,8 +24,4 @@
 
 .header-categories-item {
   margin: 0 5px;
-  padding: 5px;
-  background-color: #e1ebe5;
-  border-radius: 3px;
-  cursor: pointer;
 }

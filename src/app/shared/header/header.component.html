@@ -2,11 +2,13 @@
   <div class="header-shop-name">Michatlon</div>
   <div class="header-categories">
     <div class="header-subcategories">
-      <div (click)="navigateTo('products')" class="header-categories-item">Produkty</div>
-      <div (click)="navigateTo('cart')" class="header-categories-item">Koszyk</div>
+      <button type="button" class="btn btn-outline-secondary header-categories-item" (click)="navigateTo('products')">Produkty</button>
+      <button type="button" class="btn btn-outline-secondary header-categories-item" (click)="navigateTo('cart')">
+        Koszyk <span class="badge badge-secondary">{{cartService.inCartNumberSubject | async}}</span>
+      </button>
     </div>
     <div class="header-subcategories">
-      <div (click)="navigateTo('admin')" class="header-categories-item">Admin</div>
+      <button (click)="navigateTo('admin')" type="button" class="btn btn-outline-secondary header-categories-item">Admin</button>
     </div>
   </div>
 </div>

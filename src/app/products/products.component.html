@@ -1,12 +1,12 @@
 <div class="products-container row">
-    <div class="col-3 categories-menu">
+    <div class="col-2 categories-menu">
       <div *ngFor="let category of categories; let i = index" class="row category-name"
            [ngClass]="{'active-category' : i === selectedCategoryIndex}"
            (click)="selectedCategoryIndex = i">
         {{category.name}}
       </div>
     </div>
-    <div class="col-9 products-content">
+    <div class="col-10 products-content">
       <ng-container *ngIf="products && categories">
         <ng-container *ngFor="let prod of products | categoryFilter:categories[selectedCategoryIndex]._id">
           <app-product [product]="prod"></app-product>

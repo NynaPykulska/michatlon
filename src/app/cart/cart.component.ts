@@ -12,12 +12,18 @@ import {takeUntil} from 'rxjs/operators';
 export class CartComponent implements OnInit, OnDestroy {
 
   cartItems: CartItem[];
+  sumPrice = 0;
 
   private cartItemsSub: Subscription;
   private destroy: Subject<boolean> = new Subject();
 
   constructor(private cartService: CartService) {
-    this.cartItemsSub = this.cartService.inCartSubject.pipe(takeUntil(this.destroy)).subscribe(data => this.cartItems = data);
+    this.cartItemsSub = this.cartService.inCartSubject
+      .pipe(takeUntil(this.destroy))
+      .subscribe(data => {
+        this.cartItems = data;
+        this.sumPrice = this.cartItems.reduce((p, c) => p + (c.quantity * c.price), 0);
+      });
   }
 
   ngOnInit() {
