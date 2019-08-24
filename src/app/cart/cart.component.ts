@@ -3,6 +3,7 @@ import {CartItem} from '../shared/models/cart-item.model';
 import {CartService} from './cart.service';
 import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {ProductsService} from '../products/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,7 @@ export class CartComponent implements OnInit, OnDestroy {
   private cartItemsSub: Subscription;
   private destroy: Subject<boolean> = new Subject();
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private productsService: ProductsService) {
     this.cartItemsSub = this.cartService.inCartSubject
       .pipe(takeUntil(this.destroy))
       .subscribe(data => {
@@ -27,6 +28,11 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+  }
+
+  pay() {
+    console.log('pay');
+    this.productsService.updateProductsQuantity(this.cartItems.map(elem => elem.id));
   }
 
   ngOnDestroy() {

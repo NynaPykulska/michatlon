@@ -25,7 +25,7 @@
 
 .product-description {
   margin: 3px 0;
-  font-size: 10px;
+  font-size: 11px;
   text-align: center;
 }
 
@@ -40,5 +40,40 @@
   right: -3px;
   font-size: 10px;
   padding: 5px;
-  color: #877379;
+  color: #6c757d;
+}
+
+.red {
+  color: #E55934
+}
+.orange {
+  color: #FA7921
+}
+.yellow {
+  color: #FDE74C
+}
+.green {
+  color: #9BC53D
+}
+.grey {
+  color: #6c757d
+}
+
+.overlay {
+  background-color: #E58970;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.product-availability {
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
 }

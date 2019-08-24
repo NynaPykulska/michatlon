@@ -65,7 +65,7 @@
           </div>
           <div class="col-6">
             Podglad
-            <app-product [product]="newProduct"></app-product>
+            <app-product [setProduct]="newProduct"></app-product>
           </div>
         </div>
         </ng-template>
@@ -109,7 +109,9 @@
             </div>
           </div>
           <div class="col-6">
-            <app-product [product]="product"></app-product>
+            <app-product [setProduct]="product"></app-product>
+            <button class="btn-primary" (click)="updateProduct(product)">Zapisz</button>
+            <button class="btn-primary" (click)="deleteProduct(product)">Usuń</button>
           </div>
         </div>
         </ng-template>

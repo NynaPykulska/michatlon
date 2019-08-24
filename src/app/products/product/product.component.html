@@ -1,9 +1,15 @@
 <div class="product-card" *ngIf="product">
+  <div class="overlay" *ngIf="product.quantity === 0" ></div>
   <div class="price-label">{{product.price | currency:'PLN':'symbol':'1.2':'pl'}}</div>
   <div class="product-picture">
     <img src="{{product.pictureURL}}" alt="{{product.description}}" height="100">
   </div>
   <div class="product-name">{{product.name}}</div>
   <div class="product-description">{{product.description}}</div>
-  <button class="btn btn-outline-primary btn-sm" (click)="addToCartClicked()">Do koszyka</button>
+  <div class="product-availability">
+    <span>Dostępność: </span><span [ngClass]="availability.class">{{availability.label}}</span>
+  </div>
+  <button class="btn btn-outline-primary btn-sm" (click)="addToCartClicked()" [disabled]="product.quantity === 0">
+    Do koszyka
+  </button>
 </div>

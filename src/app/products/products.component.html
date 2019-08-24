@@ -9,7 +9,7 @@
     <div class="col-10 products-content">
       <ng-container *ngIf="products && categories">
         <ng-container *ngFor="let prod of products | categoryFilter:categories[selectedCategoryIndex]._id">
-          <app-product [product]="prod"></app-product>
+          <app-product [setProduct]="prod"></app-product>
         </ng-container>
       </ng-container>
     </div>

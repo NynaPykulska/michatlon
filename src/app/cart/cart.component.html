@@ -21,7 +21,7 @@
     <div class="col-6"></div>
     <div class="col-6 cart-summary">
       <p>suma do zapłaty: {{sumPrice | currency:'PLN':'symbol':'1.2':'pl'}}</p>
-      <button *ngIf="sumPrice > 0" type="button" class="btn btn-outline-secondary btn-sm">Zapłać</button>
+      <button *ngIf="sumPrice > 0" type="button" class="btn btn-outline-secondary btn-sm" (click)="pay()">Zapłać</button>
     </div>
   </div>
 </div>

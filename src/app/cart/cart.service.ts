@@ -34,4 +34,9 @@ export class CartService {
     }
     this.inCartSubject.next(this.inCart);
   }
+
+  clearCart() {
+    this.inCart = [];
+    this.inCartSubject.next([]);
+  }
 }

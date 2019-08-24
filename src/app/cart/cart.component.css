@@ -1,5 +1,5 @@
 .cart-content {
-  padding: 10px
+  padding: 10px;
 }
 
 .cart-item {
@@ -8,14 +8,7 @@
   border-radius: 5px;
   padding: 15px;
   box-shadow: 0 0 15px -5px #C1C8C9;
-}
-
-.cart-item-data {
-
-}
-
-.cart-item-description {
-
+  background-color: #fff;
 }
 
 .cart-summary {
